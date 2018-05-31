@@ -29,7 +29,7 @@ public class ObjectSeriaDemo2 {
         oos.close();*/
         
         ObjectInputStream ois = new ObjectInputStream(
-                new FileInputStream("test/obj1.dat"));
+                new FileInputStream("test/obj1.txt"));
         Bar2 bar2 = (Bar2)ois.readObject();
         System.out.println(bar2);
         ois.close();
