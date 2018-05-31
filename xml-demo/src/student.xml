@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school id="school">
+	<student id="1">
+		<name id="nameId">曹操</name>
+		<age>49</age>
+		<gender>男</gender>
+		<phone>136-99999999</phone>
+		<address>魏国</address>
+	</student>
+	<student id="2">
+		<name>刘备</name>
+		<age>45</age>
+		<gender>男</gender>
+		<phone>136-88888888</phone>
+		<address>蜀国</address>
+	</student>
+	<student id="3">
+		<name>诸葛亮</name>
+		<age>51</age>
+		<gender>男</gender>
+		<phone>136-77777777</phone>
+		<address>蜀国</address>
+	</student>
+</school>
