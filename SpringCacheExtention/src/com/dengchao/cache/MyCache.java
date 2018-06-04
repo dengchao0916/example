@@ -40,6 +40,7 @@ public class MyCache implements Cache {
         ValueWrapper result = null;
         Account thevalue = store.get(key);
         if (thevalue != null) {
+            System.out.println("key : " + key);
             System.out.println("cache name : " + this.getName());
             System.out.println("the cache : " + this.getNativeCache());
             thevalue.setPassword("from mycache:" + name);
@@ -50,6 +51,7 @@ public class MyCache implements Cache {
 
     @Override
     public void put(Object key, Object value) {
+        System.out.println("put---->" + "key:" + key + " ,value:" + value);
         Account thevalue = (Account) value;
         store.put((String) key, thevalue);
     }
@@ -64,19 +66,16 @@ public class MyCache implements Cache {
 
     @Override
     public <T> T get(Object arg0, Class<T> arg1) {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public <T> T get(Object arg0, Callable<T> arg1) {
-        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public ValueWrapper putIfAbsent(Object arg0, Object arg1) {
-        // TODO Auto-generated method stub
         return null;
     }
 }
