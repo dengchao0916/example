@@ -1,4 +1,4 @@
-package com.dengchao.recursion;
+package com.dengchao.algorithm;
 
 public class Sum100 {
 

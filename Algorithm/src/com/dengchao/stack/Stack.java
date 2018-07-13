@@ -3,76 +3,55 @@ package com.dengchao.stack;
 /**
  * 基于数组实现的顺序栈
  * 
- * @param <E>
  */
-public class Stack<E> {
-    private Object[] data = null;
-    private int maxSize = 0; // 栈容量
-    private int top = -1; // 栈顶指针
+public class Stack {
+    int[] arr;
+    int len = 0;
 
-    /**
-     * 构造函数：根据给定的size初始化栈
-     */
-    Stack() {
-        this(10); // 默认栈大小为10
+    public Stack() {
+        arr = new int[100];
     }
 
-    Stack(int initialSize) {
-        if (initialSize >= 0) {
-            this.maxSize = initialSize;
-            data = new Object[initialSize];
-            top = -1;
-        } else {
-            throw new RuntimeException("初始化大小不能小于0：" + initialSize);
+    public Stack(int n) {
+        arr = new int[n];
+    }
+
+    public int size() {
+        return len + 1;
+    }
+
+    // 扩大数组
+    public void resize() {
+        int[] b = new int[arr.length * 2];
+        System.arraycopy(arr, 0, b, 0, arr.length);
+        arr = b;
+    }
+
+    public void show() {
+        for (int i = 0; i < len; i++) {
+            System.out.print(arr[i] + "  ");
         }
+        System.out.println();
     }
 
-    // 判空
-    public boolean isEmpty() {
-        return top == -1 ? true : false;
+    // 进栈
+    public void push(int a) {
+        if (len >= arr.length)
+            resize();
+        arr[len] = a;
+        len++;
     }
 
-    // 进栈,第一个元素top=0；
-    public boolean push(E e) {
-        if (top == maxSize - 1) {
-            throw new RuntimeException("栈已满，无法将元素入栈！");
-        } else {
-            data[++top] = e;
-            return true;
+    // 出栈
+    public int pop() {
+        if (len == 0) {
+            System.out.println();
+            System.out.println("stack is empty!");
+            return -1;
         }
-    }
-
-    // 查看栈顶元素但不移除
-    public E peek() {
-        if (top == -1) {
-            throw new RuntimeException("栈为空！");
-        } else {
-            return (E) data[top];
-        }
-    }
-
-    // 弹出栈顶元素
-    public E pop() {
-        if (top == -1) {
-            throw new RuntimeException("栈为空！");
-        } else {
-            return (E) data[top--];
-        }
-    }
-
-    // 返回对象在堆栈中的位置，以 1 为基数
-    public int search(E e) {
-        //保存栈顶指针
-        int i = top;
-        while (top != -1) {
-            if (peek() != e) {
-                top--;
-            } else {
-                break;
-            }
-        }
-        int result = top + 1;
-        top = i;
-        return result;
+        int a = arr[len - 1];
+        arr[len - 1] = 0;
+        len--;
+        return a;
     }
 }

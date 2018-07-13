@@ -38,7 +38,6 @@ public class MyArrayList<T> implements Iterable<T> {
             throw new ArrayIndexOutOfBoundsException();
         }
         return theItem[idx];
-
     }
 
     public Object set(int idx, Object newVal) {
@@ -61,7 +60,6 @@ public class MyArrayList<T> implements Iterable<T> {
         // 旧内容拷贝到新数组中
         for (int i = 0; i < size(); i++) {
             theItem[i] = old[i];
-
         }
     }
 

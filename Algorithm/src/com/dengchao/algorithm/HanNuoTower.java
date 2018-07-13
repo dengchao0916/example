@@ -1,4 +1,4 @@
-package com.dengchao.recursion;
+package com.dengchao.algorithm;
 
 /*汉诺塔问题：一次只能移动一个盘子；
  不能把大盘子放在小盘子上；除去盘子在两个柱子之间移动的瞬间，

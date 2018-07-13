@@ -1,4 +1,4 @@
-package com.dengchao.recursion;
+package com.dengchao.algorithm;
 
 import java.io.UnsupportedEncodingException;
 
